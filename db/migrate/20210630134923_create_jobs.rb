@@ -7,9 +7,8 @@ class CreateJobs < ActiveRecord::Migration[6.1]
       t.string :description
       t.string :services
       t.string :service_date
-      t.belongs_to :employee, foreign-key: true
-      t.belongs_to :customer, foreign-key: true
-      t.boolean :complete
+      t.integer :employee_id
+      t.integer :customer_id
 
       t.timestamps
     end
