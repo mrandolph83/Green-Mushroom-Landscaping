@@ -8,7 +8,7 @@ class CreateJobs < ActiveRecord::Migration[6.1]
       t.string :services
       t.string :service_date
       t.integer :employee_id
-      t.integer :customer_id
+      t.integer :user_id
 
       t.timestamps
     end
