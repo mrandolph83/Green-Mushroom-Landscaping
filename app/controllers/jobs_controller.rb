@@ -5,9 +5,12 @@ class JobsController < ApplicationController
     end
 
     def create
-      @job = job.new(job_params)
+      @job = Job.create!(job_params)
+      byebug
+     
+      # @job.user_id = session[:user_id]
+
       if @job.save 
-        session[:job_id] = @job.id 
         redirect_to job_path(@job)
       else 
         render :new
@@ -15,14 +18,14 @@ class JobsController < ApplicationController
     end
 
     def show
-        @job = job.find_by_id(params[:id])
+        @job = Job.find_by_id(params[:id])
         redirect_to '/' if !@job
     end
 
     private
 
     def job_params
-        params.require(:job).permit(:email, :password)
+        params.require(:job).permit(:job_address_street, :picture, :description, :job_address_land, :services, :service_date, :employee_id, :user_id)
     end 
 
 end
