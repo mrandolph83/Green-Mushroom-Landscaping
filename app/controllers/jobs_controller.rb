@@ -5,10 +5,8 @@ class JobsController < ApplicationController
     end
 
     def create
-      @job = Job.create!(job_params)
-      byebug
-     
-      # @job.user_id = session[:user_id]
+      @job = Job.new(job_params)
+      @job.user_id = session[:user_id]
 
       if @job.save 
         redirect_to job_path(@job)
