@@ -13,12 +13,10 @@
     <%= f.label :service_date %>
     <%= f.text_field :service_date %><br>
 
+    <p> Select an available employee from our roster </p>
     <%= f.label "employee_id" %>
-    <%= f.hidden_field :employee_id, value: 1 %><br>
-
-    <%= f.label "user_id" %>
-    <%= f.hidden_field :user_id, value: 1 %> <br>
-
+    <%= f.collection_select :employee_id, Employee.all, :id, :name %><br>
+    <p>Or let us select for you </p>
 
     <%= f.submit "Create Job Request" %>
     <% end %>

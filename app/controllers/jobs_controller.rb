@@ -2,6 +2,8 @@ class JobsController < ApplicationController
 
     def new
         @job = Job.new
+        @job.build_employee
+
     end
 
     def create
@@ -23,7 +25,7 @@ class JobsController < ApplicationController
     private
 
     def job_params
-        params.require(:job).permit(:job_address_street, :picture, :description, :job_address_land, :services, :service_date, :employee_id, :user_id)
+        params.require(:job).permit(:job_address_street, :picture, :description, :job_address_land, :services, :service_date, :employee_id, :user_id, employee_attributes: [:name])
     end 
 
 end
