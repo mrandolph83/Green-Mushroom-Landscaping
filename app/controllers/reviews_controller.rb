@@ -7,7 +7,7 @@ end
 
 def create
     @review = Review.new(review_params)
-    
+
     if @review.save 
         redirect_to review_path(@review)
     else 
@@ -26,6 +26,7 @@ def index
         @reviews = @job.reviews
     else
         @reviews = Review.all
+    end 
 end 
 
 private
