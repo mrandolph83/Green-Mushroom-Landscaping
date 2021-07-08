@@ -1,0 +1,6 @@
+<h1>All the reviews </h1>
+
+<% @reviews.each do |r| %>
+
+<%= r.rating %> stars <%= r.description %><br>
+<% end %>
