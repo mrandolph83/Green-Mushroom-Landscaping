@@ -6,5 +6,6 @@ class EmployeesController < ApplicationController
     def create
     end 
     
+# Add display alphabetical for index
 
 end
