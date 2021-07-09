@@ -5,7 +5,7 @@ class EmployeesController < ApplicationController
 
     def create
     end 
-    Updated
+    Updated 2
     
 # Add display alphabetical for index
 
